@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Routes, useLocation , Route} from 'react-router-dom';
+import Home from './pages/Home/Home';
 
 
 
@@ -18,7 +19,10 @@ function App() {
 
   return (
     <> 
-      <div className='font-normal text-3xl'>hello</div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+    
+      </Routes>
     </>
   );
 }
