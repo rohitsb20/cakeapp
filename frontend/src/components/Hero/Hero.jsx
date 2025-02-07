@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div
-      className="h-[34vw] max-w-6xl mx-auto rounded-xl
+      className="h-[34vw] w-[90%] md:max-w-6xl mx-auto rounded-xl
     bg-custom-image bg-cover bg-center relative  shadow-sm border-2 border-black"
     >
       <div
