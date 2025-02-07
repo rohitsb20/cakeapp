@@ -22,7 +22,7 @@ const NavLink = [
 
 const Navbar = () => {
   return (
-    <nav className="navbar rounded-box shadow py-5">
+    <nav className="navbar rounded-box py-5">
       <div className="w-full md:flex md:items-center md:gap-2">
         <div className="flex items-center justify-between">
           <div className="navbar-start items-center justify-between max-md:w-full">
