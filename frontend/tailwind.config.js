@@ -7,7 +7,11 @@ export default {
     "./node_modules/flyonui/dist/js/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "custom-image": "url('/src/assets/images/hero.jpg')",
+      },
+    },
   },
   plugins: [require("flyonui"), require("flyonui/plugin")],
   flyonui: {
