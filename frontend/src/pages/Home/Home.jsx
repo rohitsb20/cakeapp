@@ -1,7 +1,9 @@
-
+import Hero from "../../components/Hero/Hero";
 
 const Home = () => {
-  return <div className="font-normal text-3xl uppercase">hello home</div>;
-}
+  return <div>
+    <Hero />
+  </div>;
+};
 
-export default Home
+export default Home;
