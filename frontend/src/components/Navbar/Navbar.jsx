@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="navbar-start items-center justify-between max-md:w-full">
             <Link
               className="link text-base-content link-neutral text-xl font-semibold no-underline"
-              to="#"
+              to="/"
             >
               Logo
             </Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
                   className="menu-item  flex items-center justify-center"
                 >
                   <Link
-                    className="link md:link-animated  p-0 hover:bg-transparent no-underline text-lg hover:text-pink-400"
+                    className="link md:link-animated  p-1 hover:bg-transparent no-underline text-lg hover:text-pink-400"
                     to={item.link}
                   >
                     {item.name}
