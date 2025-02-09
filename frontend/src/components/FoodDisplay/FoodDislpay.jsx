@@ -1,11 +1,10 @@
-import { StoreContext } from "../../context/storeContext";
-import { useContext } from "react";
+import { foodItems } from "../../assets/asset";
 import FoodCard from "../foodCard/FoodCard";
 
 
 const FoodDisplay = () => {
 
-    const { foodItems } = useContext(StoreContext);
+    
 
     return (
       <div>
