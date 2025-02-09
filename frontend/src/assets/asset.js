@@ -1,0 +1,51 @@
+export const foodItems = [
+  {
+    _id: "1",
+    name: "Cherry Cake",
+    price: 12,
+    description: "A delicious cherry cake",
+    category: "Cakes",
+  },
+  {
+    _id: "2",
+    name: "Cherry Cake",
+    price: 12,
+    description: "A delicious cherry cake",
+    category: "Cakes",
+  },
+  {
+    _id: "3",
+    name: "Cherry Cake",
+    price: 12,
+    description: "A delicious cherry cake",
+    category: "Cakes",
+  },
+  {
+    _id: "4",
+    name: "Cherry Cake",
+    price: 12,
+    description: "A delicious cherry cake",
+    category: "Cakes",
+  },
+  {
+    _id: "5",
+    name: "Cherry Cake",
+    price: 12,
+    description: "A delicious cherry cake",
+    category: "Cakes",
+  },
+  {
+    _id: "6",
+    name: "Cherry Cake",
+    price: 12,
+    description: "A delicious cherry cake",
+    category: "Cakes",
+  },
+  {
+    _id: "7",
+    name: "Cherry Cake",
+    price: 12,
+    description: "A delicious cherry cake",
+    category: "Cakes",
+  },
+];
