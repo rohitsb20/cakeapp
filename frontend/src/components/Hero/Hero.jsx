@@ -8,7 +8,7 @@ const Hero = () => {
         className="absolute flex flex-col items-start gap-1.5vw
      max-w-[50%] bottom-[10%] left-[6vw] text-black  "
       >
-        <h2 className=" text-xl md:text-2xl font-semibold bg-white px-1 md:bg-transparent">
+        <h2 className="  text-xl md:text-2xl font-semibold bg-white px-1 md:bg-transparent">
           Order Delicious Cake here
         </h2>
         <p className=" text-base md:text-normal font-normal flex-1 hidden md:flex">
