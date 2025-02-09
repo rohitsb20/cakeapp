@@ -39,9 +39,11 @@ const Menu = ({ category, setCategory }) => {
         Choose your favorite cake from our delicious menu!
       </p>
 
-      <div className="flex gap-5 px-4   overflow-x-scroll 
+      <div
+        className="flex gap-5 px-4   overflow-x-scroll 
       horizontal-scrollbar transition-ease-in-out
-       duration-500">
+       duration-500"
+      >
         {cakes.map((cake, index) => (
           <div
             onClick={() =>
@@ -61,10 +63,11 @@ const Menu = ({ category, setCategory }) => {
               />
             </div>
             <h3
-              className="
-          
-           md:text-[1.4vw] text-[14px]
-          cursor-pointer"
+              className={`${
+                category === cake.name ? "text-pink-400":
+                 ""
+              } md:text-[1.4vw] text-[14px]
+          cursor-pointer`}
             >
               {cake.name}
             </h3>
