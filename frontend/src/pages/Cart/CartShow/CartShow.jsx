@@ -2,18 +2,14 @@ import { Trash2 } from "lucide-react";
 import { useContext } from "react";
 import { StoreContext } from "../../../context/storeContext";
 import CartTotal from "../CartTotal/CartTotal";
+import { useNavigate } from "react-router-dom";
 
 const CartShow = () => {
-  const { 
-    foodItems,
-     cartItems,
-      removeFromCart,
-       } =
-    useContext(StoreContext);
-
-  
-   
-
+  const { foodItems, cartItems, removeFromCart } = useContext(StoreContext);
+   const navigate = useNavigate();
+   const handleProceed = () => {
+     navigate("/orderpage");
+   }; 
   return (
     <div>
       <div className="capitalize font-semibold grid grid-cols-6 gap-4 items-center">
@@ -58,6 +54,15 @@ const CartShow = () => {
         })}
       </div>
       <CartTotal />
+      <div className="flex justify-center mt-4">
+        <button
+          onClick={handleProceed}
+          className="btn bg-pink-500 text-white
+           hover:bg-pink-600 waves waves-light"
+        >
+          Proceed to checkout
+        </button>
+      </div>
     </div>
   );
 };
