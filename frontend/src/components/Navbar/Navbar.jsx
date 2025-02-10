@@ -91,14 +91,19 @@ const Navbar = () => {
               <Search />
               <div>
                 <div className="indicator">
-                  <span className="indicator-item badge badge-error rounded-full mt-1">
-                    {Object.keys(cartItems).length}
-                  </span>
+                  {Object.keys(cartItems).length === 0 ? (
+                    ""
+                  ) : (
+                    <span className="indicator-item badge badge-error rounded-full mt-1">
+                      {Object.keys(cartItems).length}
+                    </span>
+                  )}
+
                   <div className="p-1">
-                <ShoppingCart
-                  className="hover:text-pink-500  cursor-pointer"
-                  onClick={handleCartClick}
-                />
+                    <ShoppingCart
+                      className="hover:text-pink-500  cursor-pointer"
+                      onClick={handleCartClick}
+                    />
                   </div>
                 </div>
               </div>
