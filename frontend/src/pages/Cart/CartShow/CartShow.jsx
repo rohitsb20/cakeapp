@@ -2,7 +2,13 @@ import { Trash2 } from "lucide-react";
 import { useContext } from "react";
 import { StoreContext } from "../../../context/storeContext";
 const CartShow = () => {
-  const { foodItems, cartItems, removeFromCart } = useContext(StoreContext);
+  const { 
+    foodItems,
+     cartItems,
+      removeFromCart,
+       grandTotal,
+      deliveryCharges } =
+    useContext(StoreContext);
 
   return (
     <div>
@@ -28,10 +34,10 @@ const CartShow = () => {
                     className="bg-base-content/10 h-10 w-10 rounded-md"
                   />
                   <p>{item.name}</p>
-                  <p className="text-lg font-medium">{item.price}</p>
+                  <p className="text-lg font-medium">&#8377; {item.price}</p>
                   <p>{cartItems[item._id]}</p>
                   <p className="text-lg font-medium">
-                    {item.price * cartItems[item._id]}
+                    &#8377; {item.price * cartItems[item._id]}
                   </p>
                   <p>
                     <Trash2
@@ -46,6 +52,20 @@ const CartShow = () => {
           }
           return null;
         })}
+      </div>
+
+      <div className="mt-4 p-8">
+        <div className="flex justify-between items-center">
+          <p>Subtotal</p> <p>&#8377;{grandTotal()}</p>
+        </div>
+        <div className="divider divider-dashed m-0"></div>
+        <div className="flex justify-between items-center">
+          <p>Delivery Charges</p> <p>&#8377; {deliveryCharges}</p>
+        </div>
+        <div className="divider divider-dashed m-0"></div>
+        <div className="flex justify-between items-center">
+          <p>Grand Total</p> <p>&#8377; {grandTotal()+ deliveryCharges }</p>
+        </div>
       </div>
     </div>
   );
