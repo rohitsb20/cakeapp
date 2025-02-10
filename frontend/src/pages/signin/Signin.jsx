@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Signin = () => {
   return (
-    <div className="min-h-screen mt-6 flex items-start justify-center bg-white p-4">
+    <div className=" mt-6 flex items-start justify-center bg-white p-4">
       <div className="max-w-4xl w-full flex rounded-lg shadow-sm  overflow-hidden bg-white">
         {/* Image for large screens */}
         <div className="hidden lg:block lg:w-1/2">
