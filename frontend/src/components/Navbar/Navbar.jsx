@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart } from "lucide-react";
+import { useContext } from "react";
+import { StoreContext } from "../../context/storeContext";
+
 
 const NavLink = [
   {
@@ -23,6 +26,7 @@ const NavLink = [
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { cartItems } = useContext(StoreContext);
   const handleClick = () => {
     navigate("/signin");
   };
@@ -88,7 +92,7 @@ const Navbar = () => {
               <div>
                 <div className="indicator">
                   <span className="indicator-item badge badge-error rounded-full mt-1">
-                    1
+                    {Object.keys(cartItems).length}
                   </span>
                   <div className="p-1">
                 <ShoppingCart
