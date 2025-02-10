@@ -2,7 +2,7 @@ export const foodItems = [
   {
     _id: "1",
     name: "Pineapple Cake",
-    image: "/images/pineapple.jpg",
+    image: "./src/assets/images/orange.jpg",
     price: 12,
     description: "A delicious cherry cake",
     category: "pineapple",
@@ -10,7 +10,7 @@ export const foodItems = [
   {
     _id: "2",
     name: "Cherry Cake",
-    image: "/images/cherry.jpg",
+    image: "./src/assets/images/cherry.jpg",
     price: 12,
     description: "A delicious cherry cake",
     category: "cherry",
@@ -18,7 +18,7 @@ export const foodItems = [
   {
     _id: "3",
     name: "Orange Cake",
-    image: "/images/orange.jpg",
+    image: "./src/assets/images/orange.jpg",
     price: 12,
     description: "A delicious cherry cake",
     category: "orange",
@@ -26,8 +26,8 @@ export const foodItems = [
   {
     _id: "4",
     name: "Vanilla Cake",
-    image: "/images/vanilla.jpg",
-    
+    image: "./src/assets/images/vanilla.jpg",
+
     price: 12,
     description: "A delicious cherry cake",
     category: "vanilla",
@@ -35,7 +35,7 @@ export const foodItems = [
   {
     _id: "5",
     name: "Oreo Cake",
-    image: "/images/oreo.jpg",
+    image: "./src/assets/images/oreo.jpg",
     price: 12,
     description: "A delicious cherry cake",
     category: "oreo",
@@ -43,7 +43,7 @@ export const foodItems = [
   {
     _id: "6",
     name: "Strawberry Cake",
-    image: "/images/strawberry.jpg",
+    image: "./src/assets/images/strawberry.jpg",
     price: 12,
     description: "A delicious cherry cake",
     category: "strawberry",
@@ -51,7 +51,7 @@ export const foodItems = [
   {
     _id: "7",
     name: "Chocolate Cake",
-    image: "/images/chocolate.jpg",
+    image: "./src/assets/images/chocolate.jpg",
     price: 12,
     description: "A delicious cherry cake",
     category: "chocolate",
