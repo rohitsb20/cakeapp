@@ -4,7 +4,6 @@ import { Search, ShoppingCart } from "lucide-react";
 import { useContext } from "react";
 import { StoreContext } from "../../context/storeContext";
 
-
 const NavLink = [
   {
     name: "Home",
