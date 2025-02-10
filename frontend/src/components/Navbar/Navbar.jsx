@@ -44,6 +44,7 @@ const Navbar = () => {
             >
               Cakify
             </Link>
+
             <div className="md:hidden">
               <button
                 type="button"
@@ -84,12 +85,18 @@ const Navbar = () => {
           <div className="flex items-center md:justify-between justify-center mt-2 gap-4 ">
             <div className="flex items-center gap-2">
               <Search />
-              <div className="shop-icon relative">
+              <div>
+                <div className="indicator">
+                  <span className="indicator-item badge badge-error rounded-full mt-1">
+                    1
+                  </span>
+                  <div className="p-1">
                 <ShoppingCart
                   className="hover:text-pink-500  cursor-pointer"
                   onClick={handleCartClick}
                 />
-                <div className="dot absolute top-0 -right-1 bottom-4  min-h-[10px] min-w-[10px] bg-red-500 rounded-full p-0.5 "></div>
+                  </div>
+                </div>
               </div>
             </div>
 
