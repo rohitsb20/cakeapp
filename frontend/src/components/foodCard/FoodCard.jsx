@@ -17,30 +17,34 @@ const FoodCard = ({ id, name, price, description, category,image }) => {
         <p>
           flavour : <span className="text-gray-800">{category}</span>
         </p>
-        <p className="font-bold text-2xl"> &#8377;{price}</p>
-        <div className="card-actions">
-          {!cartItems[id] ? (
-            <div className="mt-4">
-              <button
-                className="bg-green-500 text-white px-2 py-1 rounded-lg"
-                onClick={() => addToCart(id)}
-              >
-                Add to cart
-              </button>
-            </div>
-          ) : (
-            <div className="flex items-center ">
-              <Minus
-                className="cursor-pointer border-2 rounded-full"
-                onClick={() => removeFromCart(id)}
-              />
-              <span className="px-2">{cartItems[id]}</span>
-              <Plus
-                className="cursor-pointer border-2 rounded-full"
-                onClick={() => addToCart(id)}
-              />
-            </div>
-          )}{" "}
+        <div className="flex justify-between items-center py-2">
+          <p className="font-bold text-2xl"> &#8377;{price}</p>
+          <div className="card-actions ">
+            {!cartItems[id] ? (
+              <div>
+                <button
+                  className="bg-green-500 text-white px-4 py-2 rounded-lg"
+                  onClick={() => addToCart(id)}
+                >
+                  Add to cart
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center ">
+                <Minus
+                  size={40}
+                  className="cursor-pointer border-2 rounded-full"
+                  onClick={() => removeFromCart(id)}
+                />
+                <span className="px-2 text-lg">{cartItems[id]}</span>
+                <Plus
+                  size={40}
+                  className="cursor-pointer border-2 rounded-full"
+                  onClick={() => addToCart(id)}
+                />
+              </div>
+            )}{" "}
+          </div>
         </div>
       </div>
     </div>
