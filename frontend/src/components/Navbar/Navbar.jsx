@@ -27,10 +27,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="navbar-start items-center justify-between max-md:w-full">
             <Link
-              className="link text-base-content link-neutral text-xl font-semibold no-underline"
+              className="link text-base-content link-neutral text-2xl font-semibold no-underline"
               to="/"
             >
-              Logo
+              Cakify
             </Link>
             <div className="md:hidden">
               <button
