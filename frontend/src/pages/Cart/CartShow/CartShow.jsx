@@ -21,7 +21,7 @@ const CartShow = () => {
         <p>Remove</p>
       </div>
       <br />
-      <hr />
+      <div className="divider m-0"></div>
       <div>
         {foodItems.map((item) => {
           if (cartItems[item._id] > 0) {
@@ -46,7 +46,7 @@ const CartShow = () => {
                     />
                   </p>
                 </div>
-                <hr />
+                <div className="divider m-0"></div>
               </div>
             );
           }
@@ -64,7 +64,7 @@ const CartShow = () => {
         </div>
         <div className="divider divider-dashed m-0"></div>
         <div className="flex justify-between items-center">
-          <p>Grand Total</p> <p>&#8377; {grandTotal()+ deliveryCharges }</p>
+          <p>Grand Total</p> <p>&#8377; {grandTotal() + deliveryCharges}</p>
         </div>
       </div>
     </div>
