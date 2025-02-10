@@ -26,6 +26,9 @@ const Navbar = () => {
   const handleClick = () => {
     navigate("/signin");
   };
+  const handleCartClick = () => {
+    navigate("/cart");
+  };
   return (
     <nav className="navbar rounded-box py-5">
       <div className="w-full md:flex md:items-center md:gap-2">
@@ -82,7 +85,10 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <Search />
               <div className="shop-icon relative">
-                <ShoppingCart />
+                <ShoppingCart
+                  className="hover:text-pink-500  cursor-pointer"
+                  onClick={handleCartClick}
+                />
                 <div className="dot absolute top-0 -right-1 bottom-4  min-h-[10px] min-w-[10px] bg-red-500 rounded-full p-0.5 "></div>
               </div>
             </div>
