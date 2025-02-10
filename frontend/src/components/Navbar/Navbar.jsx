@@ -1,5 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import {Search, ShoppingCart} from "lucide-react"
+import { Search, ShoppingCart } from "lucide-react";
 
 const NavLink = [
   {
@@ -21,13 +22,21 @@ const NavLink = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/signin");
+  };
   return (
     <nav className="navbar rounded-box py-5">
       <div className="w-full md:flex md:items-center md:gap-2">
         <div className="flex items-center justify-between">
           <div className="navbar-start items-center justify-between max-md:w-full">
             <Link
-              className="link text-base-content link-neutral text-2xl font-semibold no-underline"
+              className="link
+          
+                link-neutral text-2xl
+                 font-semibold no-underline
+                 text-pink-500"
               to="/"
             >
               Cakify
@@ -79,11 +88,13 @@ const Navbar = () => {
             </div>
 
             <button
+              onClick={handleClick}
               className="btn btn-outline
              btn-sm rounded-full
-              border border-pink-400 hover:border-pink-400
+              border border-pink-500
+               hover:border-pink-500
                hover:text-white
-               hover:bg-pink-400"
+               hover:bg-pink-500"
             >
               Sign in
             </button>
