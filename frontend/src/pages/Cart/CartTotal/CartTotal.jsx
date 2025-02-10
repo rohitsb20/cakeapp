@@ -1,18 +1,14 @@
 import  { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { StoreContext } from "../../../context/storeContext";
 
 const CartTotal = () => {
 
-      const {
+       const {
         grandTotal,
         deliveryCharges,
       } = useContext(StoreContext);
 
-      const navigate = useNavigate();
-      const handleProceed = () => {
-        navigate("/orderpage");
-      }; 
+     
   return (
     <div className="mt-4 p-8">
       <div className="flex justify-between items-center">
@@ -30,15 +26,7 @@ const CartTotal = () => {
           {grandTotal() > 400 ? grandTotal() : grandTotal() + deliveryCharges}
         </p>
       </div>
-      <div className="flex justify-center mt-4">
-        <button
-          onClick={handleProceed}
-          className="btn bg-pink-500 text-white
-           hover:bg-pink-600 waves waves-light"
-        >
-          Proceed to checkout
-        </button>
-      </div>
+     
     </div>
   );
 }
