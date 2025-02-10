@@ -5,6 +5,7 @@ import OrderPage from './pages/PlaceOrder/OrderPage';
 import Cart from './pages/Cart/Cart';
 import Signin from './pages/Signin/Signin';
 import Signup from './pages/signup/Signup';
+import Payment from './pages/Payment/Payment';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/payment" element={<Payment/>} />
       
       </Routes>
     </>
