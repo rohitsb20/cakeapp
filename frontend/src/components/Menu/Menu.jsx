@@ -3,29 +3,39 @@ const cakes = [
   {
     name: "Orange Cake",
     image: "./src/assets/images/orange.png",
+    category: "orange",
   },
- 
 
   {
     name: "Chocolate Cake",
     image: "./src/assets/images/chocolate.png",
+    category: "chocolate",
   },
   {
     name: "Pineapple Cake",
     image: "./src/assets/images/pineapple.png",
+    category: "pineapple",
   },
   {
     name: "Strawberry Cake",
     image: "./src/assets/images/strawberry.png",
+    category: "strawberry",
   },
-  { name: "Oreo Cake", image: "./src/assets/images/oreo.png" },
+  {
+    name: "Oreo Cake",
+    image: "./src/assets/images/oreo.png",
+    category: "oreo",
+  },
+
   {
     name: "Cherry Cake",
     image: "./src/assets/images/cherry.png",
+    category: "cherry",
   },
   {
     name: "Vanilla Cake",
     image: "./src/assets/images/vanilla.png",
+    category: "vanilla",
   },
 ];
 
@@ -47,7 +57,9 @@ const Menu = ({ category, setCategory }) => {
         {cakes.map((cake, index) => (
           <div
             onClick={() =>
-              setCategory((prev) => (prev === cake.name ? "All" : cake.name))
+              setCategory((prev) =>
+                prev === cake.category ? "All" : cake.category
+              )
             }
             key={index}
             className="flex flex-col items-center  gap-y-1 p-1 "
@@ -58,14 +70,13 @@ const Menu = ({ category, setCategory }) => {
                 alt={cake.name}
                 className={`object-cover  transition  p-4 rounded-xl
             duration-300 ${
-              category === cake.name ? "border-2 border-pink-400" : ""
+              category === cake.category ? "border-2 border-pink-400" : ""
             }`}
               />
             </div>
             <h3
               className={`${
-                category === cake.name ? "text-pink-400":
-                 ""
+                category === cake.category ? "text-pink-400" : ""
               } md:text-[1.4vw] text-[14px]
           cursor-pointer`}
             >
