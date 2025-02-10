@@ -1,21 +1,18 @@
 import { Trash2 } from "lucide-react";
 import { useContext } from "react";
 import { StoreContext } from "../../../context/storeContext";
-import { useNavigate } from "react-router-dom";
+import CartTotal from "../CartTotal/CartTotal";
 
 const CartShow = () => {
   const { 
     foodItems,
      cartItems,
       removeFromCart,
-       grandTotal,
-      deliveryCharges } =
+       } =
     useContext(StoreContext);
 
-    const navigate = useNavigate();
-    const handleProceed = () => {
-      navigate("/orderpage");
-    } 
+  
+   
 
   return (
     <div>
@@ -60,28 +57,7 @@ const CartShow = () => {
           return null;
         })}
       </div>
-
-      <div className="mt-4 p-8">
-        <div className="flex justify-between items-center">
-          <p>Subtotal</p> <p>&#8377;{grandTotal()}</p>
-        </div>
-        <div className="divider divider-dashed m-0"></div>
-        <div className="flex justify-between items-center">
-          <p>Delivery Charges</p> <p>&#8377; {deliveryCharges}</p>
-        </div>
-        <div className="divider divider-dashed m-0"></div>
-        <div className="flex justify-between items-center">
-          <p>Grand Total</p> <p>&#8377; {grandTotal()> 400 ? (grandTotal()) : (grandTotal()+deliveryCharges) }</p>
-        </div>
-        <div className="flex justify-center mt-4">
-          <button 
-          onClick={handleProceed}
-          className="btn bg-pink-500 text-white
-           hover:bg-pink-600 waves waves-light">
-            Proceed to checkout
-          </button>
-        </div>
-      </div>
+      <CartTotal />
     </div>
   );
 };
