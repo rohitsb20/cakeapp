@@ -1,19 +1,16 @@
-
-
 import { Frown } from "lucide-react";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import CartShow from "./CartShow/CartShow";
 import { useContext } from "react";
 import { StoreContext } from "../../context/storeContext";
 
-
 const Cart = () => {
   const navigate = useNavigate();
   const { cartItems } = useContext(StoreContext);
- const isEmpty = Object.keys(cartItems).length === 0;
- const handleClick = () => {
-    navigate('/')
- }
+  const isEmpty = Object.keys(cartItems).length === 0;
+  const handleClick = () => {
+    navigate("/");
+  };
 
   return (
     <div className="container mx-auto p-4">
