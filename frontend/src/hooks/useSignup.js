@@ -38,6 +38,7 @@ const useSignup = () => {
           phone,
           lastname,
           firstname,
+          confirmPassword,
         }),
       });
 
