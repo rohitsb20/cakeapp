@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Search, ShoppingCart } from "lucide-react";
 import { useContext } from "react";
 import { StoreContext } from "../../context/storeContext";
+import useZustandContext from "../../Zustand/useContextZustand";
+import useLogout from "../../hooks/useLogout";
 
 const NavLink = [
   {
@@ -24,6 +26,9 @@ const NavLink = [
 ];
 
 const Navbar = () => {
+  const { authUser } = useZustandContext();
+  const {logouthandler} = useLogout();
+
   const navigate = useNavigate();
   const { cartItems } = useContext(StoreContext);
   const handleClick = () => {
@@ -47,6 +52,27 @@ const Navbar = () => {
             >
               Cakify
             </Link>
+            <div className={`ml-2 ${authUser ? "block" : "hidden"}`}>
+              <div className="tooltip">
+                <div className="tooltip-toggle avatar">
+                  <div className="w-13">
+                    <img
+                      src="./src/assets/images/user.jpg"
+                      alt="avatar"
+                      className=" object-cover rounded-full w-full h-full border border-pink-400 p-0"
+                    />
+                  </div>
+                </div>
+                <span
+                  className="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible"
+                  role="tooltip"
+                >
+                  <span className="tooltip-body capitalize">
+                    {authUser?.firstname} {authUser?.lastname}
+                  </span>
+                </span>
+              </div>
+            </div>
 
             <div className="md:hidden">
               <button
@@ -110,14 +136,27 @@ const Navbar = () => {
 
             <button
               onClick={handleClick}
-              className="btn btn-outline
+              className={`btn btn-outline
              btn-sm rounded-full
               border border-pink-500
                hover:border-pink-500
                hover:text-white
-               hover:bg-pink-500"
+               hover:bg-pink-500 
+              ${authUser ? "hidden" : "block"}`}
             >
               Sign in
+            </button>
+            <button
+              onClick={logouthandler}
+              className={`btn btn-outline
+             btn-sm rounded-full
+              border border-pink-500
+               hover:border-pink-500
+               hover:text-white
+               hover:bg-pink-500 
+              ${authUser ? "block" : "hidden"}`}
+            >
+              Logout
             </button>
           </div>
         </div>
