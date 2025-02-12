@@ -23,7 +23,7 @@ const FoodCard = ({ id, name, price, description, category,image }) => {
             {!cartItems[id] ? (
               <div>
                 <button
-                  className="bg-green-500 text-white px-4 py-2 rounded-lg"
+                  className="bg-green-500 text-white px-4 py-2 rounded-lg "
                   onClick={() => addToCart(id)}
                 >
                   Add to cart
