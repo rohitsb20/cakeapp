@@ -2,16 +2,17 @@ import express from "express";
 import dotenv from "dotenv";
 import dbConnect from "./database/dbConnect.js";
 import authRoutes from "./routes/auth.routes.js";
-import foodRoutes from "./routes/food.routes.js";
+import foodRoutes from "./routes/cake.routes.js";
 
 
 const port = process.env.PORT || 3000;
 const app = express();
 dotenv.config();
 app.use(express.json());
+app.use("/images", express.static("uploads"));
 
 app.use("/api/auth", authRoutes);
-app.use("/api/food", foodRoutes);
+app.use("/api/cake", foodRoutes);
 
 
 app.listen(port, () => {
