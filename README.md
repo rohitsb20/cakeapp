@@ -115,4 +115,4 @@ Special thanks to the developers and contributors who made this project possible
 
 ---
 
-Feel free to modify this README to fit your specific project details and requirements. Happy coding! 😊🍰
+😊🍰
