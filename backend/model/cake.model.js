@@ -21,18 +21,18 @@ const cakeSchema = new mongoose.Schema({
         type: String, 
         required: true 
     },
-    countInStock: { 
-        type: Number, 
-        required: true 
-    },
-    rating: { 
-        type: Number, 
-        required: true 
-    },
-    numReviews: { 
-        type: Number, 
-        required: true 
-    },
+    // countInStock: { 
+    //     type: Number, 
+    //     required: true 
+    // },
+    // rating: { 
+    //     type: Number, 
+    //     required: true 
+    // },
+    // numReviews: { 
+    //     type: Number, 
+    //     required: true 
+    // },
 },
 {
     timestamps: true,
