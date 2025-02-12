@@ -21,7 +21,7 @@ const Signin = () => {
             className="text-3xl font-bold
            mb-6 text-center text-pink-500"
           >
-            Login
+            Signin
           </h2>
           <form className="space-y-6">
             <div>

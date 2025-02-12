@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import dbConnect from "./database/dbConnect.js";
 import authRoutes from "./routes/auth.routes.js";
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const app = express();
 dotenv.config();
 app.use(express.json());
