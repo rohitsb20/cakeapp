@@ -28,12 +28,20 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/orderpage" element={<OrderPage />} />
+        <Route
+          path="/orderpage"
+          element={authUser ? <OrderPage /> : <Navigate to="/signin" />}
+        />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={authUser ? <Navigate to='/Signin' / > : <Signup/>} />
-        <Route path="/payment" element={<Payment/>} />
-      
+        <Route
+          path="/signin"
+          element={authUser ? <Navigate to="/" /> : <Signin />}
+        />
+        <Route
+          path="/signup"
+          element={authUser ? <Navigate to="/" /> : <Signup />}
+        />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </>
   );
