@@ -15,6 +15,6 @@ export default {
   },
   plugins: [require("flyonui"), require("flyonui/plugin")],
   flyonui: {
-    themes: ["light",'dark'],
+    themes: ["light"],
   },
 };

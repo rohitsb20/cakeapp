@@ -1,4 +1,6 @@
 import User from "./../model/user.model.js";
+import bcrypt from "bcryptjs";
+import {generateToken} from "../utils/token.js"
 
 export const signup = async (req, res) => {
   try {
@@ -20,16 +22,30 @@ export const signup = async (req, res) => {
       return res.status(400).json({ error: "Passwords do not match" });
     }
 
+    if (password.length < 6) {
+      return res
+        .status(400)
+        .json({ error: "Password must be at least 6 characters" });
+    }
+
+    if (phone.length !== 10) {
+      return res
+        .status(400)
+        .json({ error: "Phone number must be 10 characters" });
+    }
+
     const existingUser = await User.findOne({ email, phone });
 
     if (existingUser) {
       return res.status(400).json({ error: "User already exists" });
     }
 
+    const hashedPassword = await bcrypt.hash(password, 12);
+
     const newUser = new User({
       email,
       phone,
-      password,
+      password: hashedPassword,
       firstname,
       lastname,
     });
