@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 
 import StoreContextProvider from "./context/storeContext.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -17,5 +18,6 @@ createRoot(document.getElementById("root")).render(
         <Footer />
       </StoreContextProvider>
     </Router>
+    <Toaster />
   </StrictMode>
 );

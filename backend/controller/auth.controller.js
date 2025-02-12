@@ -4,19 +4,21 @@ import {generateToken} from "../utils/token.js"
 
 export const signup = async (req, res) => {
   try {
-    const { email, phone, password, firstname, lastname, confirmPassword } =
-      req.body;
+     const { email, phone, password, firstname, lastname, confirmPassword } =
+       req.body;
 
-    if (
-      !email ||
-      !phone ||
-      !password ||
-      !firstname ||
-      !lastname ||
-      !confirmPassword
-    ) {
-      return res.status(400).json({ error: "All fields are required" });
-    }
+     if (
+       !email ||
+       !phone ||
+       !password ||
+       !firstname ||
+       !lastname ||
+       !confirmPassword
+     ) {
+      console.log(confirmPassword);
+      
+       return res.status(400).json({ error: "All fields are required" });
+     }
 
     if (password !== confirmPassword) {
       return res.status(400).json({ error: "Passwords do not match" });
