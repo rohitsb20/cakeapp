@@ -72,8 +72,9 @@ export const signup = async (req, res) => {
 export const signin = async (req, res) => {
   try {
     const { email, password } = req.body;
+
     if (!email || !password) {
-      return res.status(400).json({ error: "All fields are required" });
+      return res.status(400).json({ error: "All fields are required " });
     }
 
     const user = await User.findOne({
@@ -104,3 +105,16 @@ export const signin = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+export const logout =async (req, res) => {
+
+  try {
+    res.clearCookie("token");
+    res.status(200).json({ message: "User logged out successfully" });
+  } catch (error) {
+    console.log("logout auth controller error", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+
+}
