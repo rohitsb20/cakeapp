@@ -52,27 +52,17 @@ const Navbar = () => {
             >
               Cakify
             </Link>
-            <div className={`ml-2 ${authUser ? "block" : "hidden"}`}>
-              <div className="tooltip">
-                <div className="tooltip-toggle avatar">
-                  <div className="w-13">
-                    <img
-                      src="./src/assets/images/user.jpg"
-                      alt="avatar"
-                      className=" object-cover rounded-full w-full h-full border border-pink-400 p-0"
-                    />
-                  </div>
-                </div>
-                <span
-                  className="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible"
-                  role="tooltip"
-                >
-                  <span className="tooltip-body capitalize">
-                    {authUser?.firstname} {authUser?.lastname}
-                  </span>
-                </span>
-              </div>
+            <div
+              className={`ml-5 hover:scale-125 ${
+                authUser ? "block" : "hidden"
+              }`}
+            >
+              <span className="flex gap-x-1 capitalize items-center ">
+                <span> Hi, </span> {authUser?.firstname}
+              </span>
             </div>
+        
+           
 
             <div className="md:hidden">
               <button
