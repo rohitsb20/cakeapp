@@ -15,7 +15,7 @@ export const signup = async (req, res) => {
        !lastname ||
        !confirmPassword
      ) {
-      console.log(confirmPassword);
+      
       
        return res.status(400).json({ error: "All fields are required" });
      }
