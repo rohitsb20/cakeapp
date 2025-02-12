@@ -1,24 +1,22 @@
 import User from "./../model/user.model.js";
 import bcrypt from "bcryptjs";
-import {generateToken} from "../utils/token.js"
+import { generateToken } from "../utils/token.js";
 
 export const signup = async (req, res) => {
   try {
-     const { email, phone, password, firstname, lastname, confirmPassword } =
-       req.body;
+    const { email, phone, password, firstname, lastname, confirmPassword } =
+      req.body;
 
-     if (
-       !email ||
-       !phone ||
-       !password ||
-       !firstname ||
-       !lastname ||
-       !confirmPassword
-     ) {
-      
-      
-       return res.status(400).json({ error: "All fields are required" });
-     }
+    if (
+      !email ||
+      !phone ||
+      !password ||
+      !firstname ||
+      !lastname ||
+      !confirmPassword
+    ) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
 
     if (password !== confirmPassword) {
       return res.status(400).json({ error: "Passwords do not match" });
@@ -67,6 +65,42 @@ export const signup = async (req, res) => {
     }
   } catch (error) {
     console.log("signup auth controller error", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+export const signin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    const user = await User.findOne({
+      email,
+    });
+    if (!user) {
+      return res.status(400).json({ error: "User does not exist" });
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    if (!isPasswordCorrect) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    if (user) {
+      generateToken(user._id, res);
+      res.status(200).json({
+        message: "User signed in successfully",
+        _id: user._id,
+        email: user.email,
+        phone: user.phone,
+        firstname: user.firstname,
+        lastname: user.lastname,
+      });
+    }
+  } catch (error) {
+    console.log("signin auth controller error", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
