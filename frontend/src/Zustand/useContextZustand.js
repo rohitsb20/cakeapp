@@ -7,7 +7,7 @@ const useZustandContext = create((set) => ({
     localStorage.setItem("auth-User", JSON.stringify(user));
     set({ authUser: user });
   },
-  logout: () => {
+  logoutUser: () => {
     localStorage.removeItem("auth-User");
     set({ authUser: null });
   },
