@@ -3,7 +3,7 @@ import { Routes, useLocation , Route, Navigate} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import OrderPage from './pages/PlaceOrder/OrderPage';
 import Cart from './pages/Cart/Cart';
-import Signin from './pages/Signin/Signin';
+import Signin from './pages/signin/Signin';
 import Signup from './pages/signup/Signup';
 import Payment from './pages/Payment/Payment';
 import useZustandContext from './Zustand/useContextZustand';
@@ -35,7 +35,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route
           path="/signin"
-          element={authUser ? <Navigate to="/" /> : <Signin />}
+          element={authUser ? <Navigate to="/" /> : <Signin/>}
         />
         <Route
           path="/signup"
