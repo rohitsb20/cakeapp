@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-     hello
+      <div className="text-3xl text-red-300">hello <br /> <button className="btn btn-primary">flyonui</button></div>
     </>
   );
 }
