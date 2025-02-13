@@ -1,17 +1,17 @@
- const Caketype = [
+const Caketype = [
   "Chocolate",
   "Vanilla",
   "Strawberry",
   "Cherry",
   "Red Velvet",
-  "Cheese Cake",
+  "Cheese",
   "Black Forest",
-  "Oreo Cake",
-  "Blueberry Cake",
-  "Coconut Cake",
-  "Banana Cake",
-  "Apple Cake",
-  "Orange Cake",
+  "Oreo",
+  "Blueberry",
+  "Coconut",
+  "Banana",
+  "Apple",
+  "Orange",
 ];
 
 export default Caketype;
