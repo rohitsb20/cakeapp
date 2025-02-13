@@ -1,10 +1,10 @@
 import { Plus } from "lucide-react";
 import { X } from "lucide-react";
 import { NotebookPen } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
-  const navigate = useNavigate();
+ 
 
   return (
     <div
@@ -19,10 +19,8 @@ const Sidebar = () => {
         justify-center gap-y-6 "
       >
         <span> Actions</span>
-        <button
-          onClick={() => {
-            navigate("/add");
-          }}
+        <NavLink
+          to="/add"
           className="btn bg-transparent border-0 
         hover:bg-transparent hover:text-pink-500
          shadow-sm py-2 md:px-7.5 "
@@ -34,11 +32,9 @@ const Sidebar = () => {
             className="
           cursor-pointer md:hidden"
           />
-        </button>
-        <button
-          onClick={() => {
-            navigate("/remove");
-          }}
+        </NavLink>
+        <NavLink
+          to="/remove"
           className="btn bg-transparent border-0
          hover:bg-transparent hover:text-pink-500  
          shadow-sm py-2"
@@ -46,11 +42,9 @@ const Sidebar = () => {
           {" "}
           <span className="hidden md:block">Remove</span>
           <X size={20} className="cursor-pointer md:hidden" />
-        </button>
-        <button
-          onClick={() => {
-            navigate("/orders");
-          }}
+        </NavLink>
+        <NavLink
+          to="/orders"
           className="btn bg-transparent border-0 
         hover:bg-transparent hover:text-pink-500
          shadow-sm py-2 md:px-5 "
@@ -58,7 +52,7 @@ const Sidebar = () => {
           {" "}
           <span className="hidden md:block">Orders</span>
           <NotebookPen size={20} className="cursor-pointer md:hidden" />
-        </button>
+        </NavLink>
       </div>
     </div>
   );
