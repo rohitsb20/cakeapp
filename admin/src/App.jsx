@@ -1,11 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-
 function App() {
-
   const location = useLocation();
-
 
   useEffect(() => {
     const loadFlyonui = async () => {
@@ -17,7 +14,10 @@ function App() {
 
   return (
     <>
-      <div className="text-3xl text-red-300">hello <br /> <button className="btn btn-primary">flyonui</button></div>
+      <div className="text-3xl text-red-300">
+        hello <br />
+        <button className="btn btn-primary">flyonui</button>
+      </div>
     </>
   );
 }
