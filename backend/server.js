@@ -5,7 +5,7 @@ import authRoutes from "./routes/auth.routes.js";
 import foodRoutes from "./routes/cake.routes.js";
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const app = express();
 dotenv.config();
 app.use(express.json());
