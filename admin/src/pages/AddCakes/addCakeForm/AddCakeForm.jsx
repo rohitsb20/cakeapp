@@ -29,6 +29,7 @@ export default function AddCakeForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await additem(formData);
+    
   };
 
   return (
