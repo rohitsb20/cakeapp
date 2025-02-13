@@ -40,7 +40,8 @@ return (
           </label>
           <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
             <div className="space-y-1 text-center">
-              <svg
+            
+          {!image?   ( <svg
                 className="mx-auto h-10 w-10 text-gray-400"
                 stroke="currentColor"
                 fill="none"
@@ -53,7 +54,7 @@ return (
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-              </svg>
+              </svg>) : null }
               <div className="flex text-sm text-gray-600">
                 <label
                   htmlFor="image"
