@@ -7,11 +7,13 @@ import ListCakes from "../ListCakes/ListCakes";
 
 const Home = () => {
   return (
-    <Routes>
-      <Route path="/add" element={<AddCakes />} />
-      <Route path="/orders" element={<ListCakes />} />
-      <Route path="/remove" element={<RemoveCakes />} />
-    </Routes>
+    <div className="p-1 md:p-5">
+      <Routes>
+        <Route path="/add" element={<AddCakes />} />
+        <Route path="/orders" element={<ListCakes />} />
+        <Route path="/remove" element={<RemoveCakes />} />
+      </Routes>
+    </div>
   );
 };
 
