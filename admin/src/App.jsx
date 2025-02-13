@@ -17,13 +17,13 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen border-2 border-blue-400">
+      <div className="min-h-screen">
         <Navbar />
         <div className="flex  ">
           <div className="max-w-[20%] ">
             <Sidebar />
           </div>
-          <div className="min-w-[90%] flex">
+          <div className="w-[90%]">
             <Home />
           </div>
         </div>
