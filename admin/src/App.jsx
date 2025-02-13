@@ -19,13 +19,11 @@ function App() {
     <>
       <div className="min-h-screen border-2 border-blue-400">
         <Navbar />
-        <div className="flex">
-          <div className="w-[20%]">
-            {" "}
+        <div className="flex  ">
+          <div className="max-w-[20%] ">
             <Sidebar />
           </div>
-          <div className="w-[80%]">
-            {" "}
+          <div className="min-w-[90%] flex">
             <Home />
           </div>
         </div>
