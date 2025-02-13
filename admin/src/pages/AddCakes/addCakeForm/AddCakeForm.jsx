@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Caketype from "../../../assets/CakeType";
+import useAddCake from "../../../hooks/useAddCake";
 
 export default function AddCakeForm() {
+  const { additem, loading } = useAddCake();
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -26,7 +28,7 @@ export default function AddCakeForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    await additem(formData);
   };
 
   return (
@@ -200,7 +202,7 @@ export default function AddCakeForm() {
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm
                          text-sm font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
             >
-              Add Item
+             {loading ? "Adding..." : "Add Cake"}
             </button>
           </div>
         </form>
