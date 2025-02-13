@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
 
 function App() {
   const location = useLocation();
@@ -14,9 +17,18 @@ function App() {
 
   return (
     <>
-      <div className="text-3xl text-red-300">
-        hello <br />
-        <button className="btn btn-primary">flyonui</button>
+      <div className="min-h-screen border-2 border-blue-400">
+        <Navbar />
+        <div className="flex">
+          <div className="w-[20%]">
+            {" "}
+            <Sidebar />
+          </div>
+          <div className="w-[80%]">
+            {" "}
+            <Home />
+          </div>
+        </div>
       </div>
     </>
   );
