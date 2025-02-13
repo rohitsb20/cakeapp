@@ -4,6 +4,7 @@ import { useContext } from "react";
 import FoodCard from "../foodCard/FoodCard";
 import { StoreContext } from "../../context/storeContext";
 
+
 const FoodDisplay = ({ category }) => {
   const { foodItems } = useContext(StoreContext);
 

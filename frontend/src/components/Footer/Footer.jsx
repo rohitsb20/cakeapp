@@ -1,12 +1,15 @@
 import {Link} from 'react-router-dom'
 
+
 const Footer = () => {
+  
   return (
     <footer className="footer footer-center bg-base-200/60 rounded p-6">
       <nav className="grid grid-flow-col gap-4 text-base-content">
         <Link to="/" className="link link-hover">
         Home
         </Link>
+
         <Link to="/about" className="link link-hover">
           About
         </Link>

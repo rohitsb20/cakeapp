@@ -38,7 +38,9 @@ const useAddCake = () => {
 
       if (data.error) {
         throw new Error(data.error);
+       
       }
+      toast.success("Cake added successfully");
     } catch (error) {
       toast.error(error.message);
     } finally {

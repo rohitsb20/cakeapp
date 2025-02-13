@@ -4,10 +4,15 @@ import { createContext} from "react";
 import { foodItems } from "../assets/asset";
 import { useState } from "react";
 
+
 export const StoreContext = createContext(null);
+
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
+
+   
+
 
   const addToCart = (itemId) => {
     setCartItems((prev) => {
