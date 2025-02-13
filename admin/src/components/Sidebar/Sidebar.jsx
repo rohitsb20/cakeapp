@@ -8,7 +8,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className="border-r px-6
+      className="border-r px-2
        md:px-7 max-w-max min-h-[44rem]
 
      border-gray-200 pt-10"
@@ -28,8 +28,12 @@ const Sidebar = () => {
          shadow-sm py-2 md:px-7.5 "
         >
           {" "}
-          <span className="hidden md:flex">Add</span>
-          <Plus size={20} className="cursor-pointer" />
+          <span className="hidden md:block">Add</span>
+          <Plus
+            size={20}
+            className="
+          cursor-pointer md:hidden"
+          />
         </button>
         <button
           onClick={() => {
@@ -40,8 +44,8 @@ const Sidebar = () => {
          shadow-sm py-2"
         >
           {" "}
-          <span className="hidden md:flex">Remove</span>
-          <X size={20} className="cursor-pointer" />
+          <span className="hidden md:block">Remove</span>
+          <X size={20} className="cursor-pointer md:hidden" />
         </button>
         <button
           onClick={() => {
@@ -52,8 +56,8 @@ const Sidebar = () => {
          shadow-sm py-2 md:px-5 "
         >
           {" "}
-          <span className="hidden md:flex">Orders</span>
-          <NotebookPen size={20} className="cursor-pointer" />
+          <span className="hidden md:block">Orders</span>
+          <NotebookPen size={20} className="cursor-pointer md:hidden" />
         </button>
       </div>
     </div>
