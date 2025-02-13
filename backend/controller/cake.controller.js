@@ -4,10 +4,14 @@ import fs from "fs";
 export const addCake = async (req, res) => {
   try {
     const { name, price, category, description } = req.body;
+    
+ 
+    
 
+    
     if (!name || !price || !category || !description || !req.file) {
       return res.status(400).json({
-        error: "All fields are required ",
+        error: "All fields are required  ",
       });
     }
 
