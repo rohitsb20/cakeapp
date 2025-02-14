@@ -2,37 +2,34 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const useGetData = () => {
- 
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
+   const [data, setData] = useState([]);
+   const url = "http://localhost:4000";
+
+   const fetchData = async () => {
+     try {
+       const response = await fetch(`${url}/api/cake/list`);
+       const result = await response.json();
+
+       if (result.success) {
+         setData(result.data);
+       
+       } else {
+         toast.error("Error in fetching data");
+       }
+     } catch (error) {
+       console.error("Error fetching data: ", error);
+       toast.error("Error in fetching data");
+     }
+   };
+
+   useEffect(() => {
+     fetchData();
+   }, []);
 
 
-    useEffect(()=>{
-        
-        const fetchData = async () => {
-           try {
-             const response = await fetch("/api/cake/list");
-             const data = await response.json();
-             if (data.error) {
-              throw new Error(data.error);
-             }
-
-             setData(data);
-            
-           } catch (error) {
-
-                console.log(error);
-                toast.error("Error fetching data");
-            
-           }
-           finally{
-               setLoading(false);
-           }
-        }
-        fetchData();
-    },[])
-    return {data,loading}
-
+     
+         
+return {data}
 }
 
 export default useGetData
