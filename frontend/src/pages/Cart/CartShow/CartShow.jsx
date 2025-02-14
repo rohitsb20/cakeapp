@@ -5,7 +5,7 @@ import CartTotal from "../CartTotal/CartTotal";
 import { useNavigate } from "react-router-dom";
 
 const CartShow = () => {
-  const { foodItems, cartItems, removeFromCart } = useContext(StoreContext);
+  const { data, cartItems, removeFromCart } = useContext(StoreContext);
    const navigate = useNavigate();
    const handleProceed = () => {
      navigate("/orderpage");
@@ -23,13 +23,14 @@ const CartShow = () => {
       <br />
       <div className="divider m-0"></div>
       <div>
-        {foodItems.map((item) => {
+        {data.map((item) => {
+          const url= "http://localhost:4000";
           if (cartItems[item._id] > 0) {
             return (
               <div key={item._id}>
                 <div className="grid grid-cols-6 gap-x-4 gap-y-8 items-center">
                   <img
-                    src={item.image}
+                    src={`${url}/images/${item.image}`}
                     alt={item.name}
                     className="bg-base-content/10 h-10 w-10 rounded-md"
                   />
