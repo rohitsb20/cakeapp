@@ -40,7 +40,7 @@ const Sidebar = () => {
          shadow-sm py-2"
         >
           {" "}
-          <span className="hidden md:block">Remove</span>
+          <span className="hidden md:block">Orders</span>
           <X size={20} className="cursor-pointer md:hidden" />
         </NavLink>
         <NavLink
@@ -50,7 +50,7 @@ const Sidebar = () => {
          shadow-sm py-2 md:px-5 "
         >
           {" "}
-          <span className="hidden md:block">Orders</span>
+          <span className="hidden md:block">Listed</span>
           <NotebookPen size={20} className="cursor-pointer md:hidden" />
         </NavLink>
       </div>
