@@ -3,39 +3,39 @@ const cakes = [
   {
     name: "Orange Cake",
     image: "./src/assets/images/orange.png",
-    category: "orange",
+    category: "Orange",
   },
 
   {
     name: "Chocolate Cake",
     image: "./src/assets/images/chocolate.png",
-    category: "chocolate",
+    category: "Chocolate",
   },
   {
     name: "Pineapple Cake",
     image: "./src/assets/images/pineapple.png",
-    category: "pineapple",
+    category: "Pineapple",
   },
   {
     name: "Strawberry Cake",
     image: "./src/assets/images/strawberry.png",
-    category: "strawberry",
+    category: "Strawberry",
   },
   {
     name: "Oreo Cake",
     image: "./src/assets/images/oreo.png",
-    category: "oreo",
+    category: "Oreo",
   },
 
   {
     name: "Cherry Cake",
     image: "./src/assets/images/cherry.png",
-    category: "cherry",
+    category: "Cherry",
   },
   {
     name: "Vanilla Cake",
     image: "./src/assets/images/vanilla.png",
-    category: "vanilla",
+    category: "Vanilla",
   },
 ];
 
