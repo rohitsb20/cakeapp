@@ -157,7 +157,8 @@ export default function AddCakeForm() {
             <select
               id="category"
               name="category"
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm  p-2 lowercase "
+              className="mt-1 block w-full rounded-md
+               border-gray-300 shadow-sm  p-2 lowercase"
               value={formData.category}
               onChange={(e) =>
                 setFormData({ ...formData, category: e.target.value })
