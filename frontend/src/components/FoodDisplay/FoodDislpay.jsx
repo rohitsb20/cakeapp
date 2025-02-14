@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Frown } from "lucide-react";
 
 import FoodCard from "../foodCard/FoodCard";
-import { StoreContext } from "../../context/storeContext";
+import { StoreContext } from "../../context/StoreContext";
 
 
 const FoodDisplay = ({ category }) => {
