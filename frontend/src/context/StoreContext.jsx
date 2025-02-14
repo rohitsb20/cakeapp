@@ -1,8 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext} from "react";
-import { foodItems } from "../assets/asset";
+
 import { useState } from "react";
+import useGetData from "../hooks/useGetData";
 
 
 export const StoreContext = createContext(null);
@@ -10,6 +11,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
+  const {data,loading} = useGetData();
 
    
 
@@ -34,12 +36,14 @@ const StoreContextProvider = (props) => {
 
   const grandTotal = () => {
     let total = 0;
-    for (const item of Object.keys(cartItems)) {
-      if (cartItems[item] > 0) {
-        let iteminfo = foodItems.find((foodItem) => foodItem._id === item);
-        total += iteminfo.price * cartItems[item];
-      }
-    }
+   if(data){
+     for (const item of Object.keys(cartItems)) {
+       if (cartItems[item] > 0) {
+         let iteminfo = data.find((foodItem) => foodItem._id === item);
+         total += iteminfo.price * cartItems[item];
+       }
+     }
+   }
     return total;
   }
 
@@ -48,7 +52,8 @@ const StoreContextProvider = (props) => {
   
 
   const contextValue = {
-    foodItems,
+    data,
+    loading,
     cartItems,
     addToCart,
     removeFromCart,

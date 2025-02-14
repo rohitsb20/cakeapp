@@ -6,7 +6,10 @@ import { StoreContext } from "../../context/storeContext";
 
 
 const FoodDisplay = ({ category }) => {
-  const { foodItems } = useContext(StoreContext);
+  const { data } = useContext(StoreContext);
+
+
+  
 
   return (
     <div>
@@ -14,7 +17,8 @@ const FoodDisplay = ({ category }) => {
         top cakes{" "}
       </h2>
       <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  mt-3">
-        {foodItems.map((item, index) => {
+        {data.map((item, index) => {
+          const url = "http://localhost:4000";
           if (category === "All" || category === item.category) {
             return (
               <FoodCard
@@ -24,7 +28,7 @@ const FoodDisplay = ({ category }) => {
                 description={item.description}
                 price={item.price}
                 category={item.category}
-                image={item.image}
+                image={`${url}/images/${item.image}`}
               />
             );
           } else {
