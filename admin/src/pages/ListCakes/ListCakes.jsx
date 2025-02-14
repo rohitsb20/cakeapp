@@ -34,8 +34,10 @@ const ListCakes = () => {
 
   return (
     <>
-      <div className="text-xl mb-4 font-semibold text-pink-500">ListCakes</div>
-      <div className="capitalize font-semibold grid grid-cols-6 gap-4 items-center">
+      <div className="text-xl mb-4 p-2 md:p-6 font-semibold text-pink-500">
+        Listed Cakes
+      </div>
+      <div className="capitalize font-semibold px-2 md:px-6 grid grid-cols-6 gap-4 items-center">
         <p>Image</p>
         <p>Title</p>
         <p>Price</p>
@@ -49,7 +51,6 @@ const ListCakes = () => {
           return (
             <div key={item._id}>
               <div className="grid grid-cols-6 gap-x-4 gap-y-8 items-center">
-                
                 <img
                   src={`${url}/images/${item.image}`}
                   alt={item.name}
@@ -59,8 +60,10 @@ const ListCakes = () => {
                 <p className="text-lg font-medium">&#8377; {item.price}</p>
 
                 <p>
-                <Trash2 className="cursor-pointer" onClick={() => remove({id: item._id})} />
-                
+                  <Trash2
+                    className="cursor-pointer"
+                    onClick={() => remove({ id: item._id })}
+                  />
                 </p>
               </div>
               <div className="divider m-0"></div>
