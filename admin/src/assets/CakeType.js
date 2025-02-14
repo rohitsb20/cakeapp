@@ -12,6 +12,7 @@ const Caketype = [
   "Banana",
   "Apple",
   "Orange",
+  "Pineapple",
 ];
 
 export default Caketype;
