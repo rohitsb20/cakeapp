@@ -34,7 +34,7 @@ const Sidebar = () => {
           />
         </NavLink>
         <NavLink
-          to="/remove"
+          to="/"
           className="btn bg-transparent border-0
          hover:bg-transparent hover:text-pink-500  
          shadow-sm py-2"
@@ -44,7 +44,7 @@ const Sidebar = () => {
           <X size={20} className="cursor-pointer md:hidden" />
         </NavLink>
         <NavLink
-          to="/orders"
+          to="/list"
           className="btn bg-transparent border-0 
         hover:bg-transparent hover:text-pink-500
          shadow-sm py-2 md:px-5 "
