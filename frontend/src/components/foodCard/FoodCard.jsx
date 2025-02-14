@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Minus, Plus } from "lucide-react";
 import { useContext } from "react";
-import { StoreContext } from "../../context/storeContext";
+import { StoreContext } from "../../context/StoreContext";
 
 const FoodCard = ({ id, name, price, description, category,image }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
