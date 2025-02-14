@@ -10,7 +10,7 @@ const router = express.Router();
 
 
 router.post("/add",upload, addCake);
-router.post("/delete", deleteCake);
+router.delete("/delete", deleteCake);
 router.get("/list",getCakes);
 
 
