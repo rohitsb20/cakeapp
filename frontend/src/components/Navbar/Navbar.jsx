@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart } from "lucide-react";
 import { useContext } from "react";
-import { StoreContext } from "../../context/storeContext";
+import { StoreContext } from "../../context/StoreContext";
 import useZustandContext from "../../Zustand/useContextZustand";
 import useLogout from "../../hooks/useLogout";
 
