@@ -4,24 +4,17 @@ import { createContext } from "react";
 
 import { useState } from "react";
 import useGetData from "../hooks/useGetData";
-import { useEffect } from "react";
+
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const { data, loading } = useGetData();
-  const [cartItems, setCartItems] = useState(() => {
-    //loading cart items from local storage
+  const [cartItems, setCartItems] = useState({});
 
-    const savedItems = localStorage.getItem("cartItems");
-    return savedItems ? JSON.parse(savedItems) : {};
-  });
 
-  //saving cart items to local storage whenever cartItems changes
 
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
+  
 
   const addToCart = (itemId) => {
     setCartItems((prev) => {
