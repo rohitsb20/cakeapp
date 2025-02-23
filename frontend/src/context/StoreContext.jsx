@@ -1,20 +1,22 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext } from "react";
-
-import { useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import useGetData from "../hooks/useGetData";
-
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const { data, loading } = useGetData();
-  const [cartItems, setCartItems] = useState({});
+  const [cartItems, setCartItems] = useState(() => {
+    // Load cart items from localStorage
+    const savedCartItems = localStorage.getItem("cartItems");
+    return savedCartItems ? JSON.parse(savedCartItems) : {};
+  });
 
-
-
-  
+  // Save cart items to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (itemId) => {
     setCartItems((prev) => {
@@ -40,7 +42,9 @@ const StoreContextProvider = (props) => {
       for (const item of Object.keys(cartItems)) {
         if (cartItems[item] > 0) {
           let iteminfo = data.find((foodItem) => foodItem._id === item);
-          total += iteminfo.price * cartItems[item];
+          if (iteminfo) {
+            total += iteminfo.price * cartItems[item];
+          }
         }
       }
     }

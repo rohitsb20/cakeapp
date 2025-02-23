@@ -54,6 +54,8 @@ export const getCakes = async (req, res) => {
   try {
     const cakes = await Cake.find({});
     res.status(200).json({ success: true, data: cakes });
+    
+    
   } catch (error) {
     console.log("getCakes controller error", error);
     res.status(500).json({ success: false, error: "Internal server error" });

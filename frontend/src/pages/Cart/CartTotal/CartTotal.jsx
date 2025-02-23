@@ -1,14 +1,9 @@
-import  { useContext } from "react";
+import { useContext } from "react";
 import { StoreContext } from "../../../context/storeContext";
 
 const CartTotal = () => {
+  const { grandTotal, deliveryCharges } = useContext(StoreContext);
 
-       const {
-        grandTotal,
-        deliveryCharges,
-      } = useContext(StoreContext);
-
-     
   return (
     <div className="mt-4 p-8">
       <div className="flex justify-between items-center">
@@ -26,9 +21,8 @@ const CartTotal = () => {
           {grandTotal() > 400 ? grandTotal() : grandTotal() + deliveryCharges}
         </p>
       </div>
-     
     </div>
   );
-}
+};
 
-export default CartTotal
+export default CartTotal;

@@ -3,11 +3,13 @@ import { useContext } from "react";
 import { Frown } from "lucide-react";
 
 import FoodCard from "../foodCard/FoodCard";
-import { StoreContext } from "../../context/StoreContext";
+import { StoreContext } from "../../context/storeContext";
 
 
 const FoodDisplay = ({ category }) => {
   const { data } = useContext(StoreContext);
+
+  
 
 
   
@@ -27,6 +29,10 @@ const FoodDisplay = ({ category }) => {
           </div>
         ) : (
           data.map((item, index) => {
+       console.log("item", item);
+       
+       
+            
             const url = "http://localhost:4000";
             if (category === "All" || category === item.category) {
               return (

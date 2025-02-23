@@ -23,9 +23,10 @@ const useGetData = () => {
 
   useEffect(() => {
     fetchData();
-  }, [data]);
+  }, []);
 
   return { data };
 };
 
 export default useGetData;
+ 

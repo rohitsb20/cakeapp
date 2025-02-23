@@ -4,7 +4,7 @@ import cors from "cors";
 import dbConnect from "./database/dbConnect.js";
 import authRoutes from "./routes/auth.routes.js";
 import foodRoutes from "./routes/cake.routes.js";
-import cartRoutes from "./routes/cart.routes.js";
+
 
 const port = process.env.PORT || 4000;
 const app = express();
@@ -20,7 +20,7 @@ app.use("/images", express.static("uploads"));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/cake", foodRoutes);
-app.use("/api/cart", cartRoutes)
+
 
 
 app.listen(port, () => {
