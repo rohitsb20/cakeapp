@@ -25,6 +25,8 @@ const StoreContextProvider = (props) => {
         [itemId]: (prev[itemId] || 0) + 1,
       };
     });
+
+     
   };
 
   const removeFromCart = (itemId) => {
