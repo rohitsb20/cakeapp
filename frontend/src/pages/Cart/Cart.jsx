@@ -2,7 +2,7 @@ import { Frown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import CartShow from "./CartShow/CartShow";
 import { useContext } from "react";
-import { StoreContext } from "../../context/storeContext";
+import { StoreContext } from "../../context/StoreContext";
 
 const Cart = () => {
   const navigate = useNavigate();
